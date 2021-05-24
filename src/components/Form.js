@@ -22,6 +22,11 @@ export default function Form(){
                                 <td>1</td>
                                 <td>X</td>
                             </tr>
+                            <tr>
+                                <td>Stuart</td>
+                                <td>1</td>
+                                <td>X</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

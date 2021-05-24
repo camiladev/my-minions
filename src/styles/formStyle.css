@@ -1,16 +1,27 @@
 .formWrapper{
     width: 650px;
-    height: 800px;
-  
-    padding: 20px;
-  
-    background: #F2B95085;
-    color: #4A738C;
+    height: 100%;  
+    
+    background: #F2F2F2;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 
 .formContainer{
-    width: 100%;
-    height: 100%;
+    width: 395px;
+    height: 800px;
+    margin-left: auto;
+    padding: 20px;
+
+    position: fixed;
+    top: auto;
+    bottom: auto;
+    
+    
+    background: #F2B95085;
+    color: #4A738C;
 
     display: flex;
     flex-direction: column;
@@ -23,6 +34,48 @@
     
 }
 
+.form{
+    width: 100%;
+    height: 200px;
+    padding: 0 20px;
+
+    border-top: 1px solid #4A738C25;
+}
+
+.form form{
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form form span{
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+.form form span input{
+    height: 30px;
+    margin-top: 5px;
+}
+
+.form form button{
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: auto;
+    background: #4A738C;
+    border: 1px solid #4A738C;
+    border-radius: 5px;
+    color: #F2F2F2;
+    font-weight: 500;
+    line-height: 30px;
+}
 
 
 .Despicable-Me-3-1-hex { color: #4A738C; }
