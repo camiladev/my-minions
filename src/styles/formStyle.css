@@ -5,20 +5,16 @@
     background: #F2F2F2;
 
     display: flex;
-    align-items: center;
     justify-content: end;
 }
 
 .formContainer{
     width: 395px;
     height: 800px;
-    margin-left: auto;
     padding: 20px;
 
     position: fixed;
-    top: auto;
-    bottom: auto;
-    
+      
     
     background: #F2B95085;
     color: #4A738C;

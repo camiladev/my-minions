@@ -3,7 +3,7 @@ import { ProductsContext } from '../contexts/ProductsContext'
 import '../styles/listingProdStyle.css'
 
 export default function ListingProd(){
-    const { mostraForm } = useContext(ProductsContext);
+    const { mostraForm, listProducts } = useContext(ProductsContext);
 
     return(
         <div className="homeContainer">
@@ -16,28 +16,33 @@ export default function ListingProd(){
                   <h1>Escolha seu minion</h1>
 
                     <div className="gridItens">
-                    
-                      <div className="card">
-                        <img src="./assets/mini-stuart.jpg" alt=""/>
-                        <div>
-                          <h2>Stuart</h2>
-                          <p>Mini Figura de Ação - Minions 2 - Stuart - Mattel</p>
-                            <button
-                              type='button'
-                              name='reserva'
-                              className='button'
-                              onClick={mostraForm}
-                              >
-                              Reservar
-                            </button>
-                        </div>
+                      {listProducts?.length == 0 && (<div>Carregando...</div>)}
+                      {listProducts?.map( item => {
+                        return(
+                          <div className="card" key={item.itemID}>
+                            <img src={item.url} alt={item.name}/>
+                            <div>
+                              <h2>{item.name}</h2>
+                              <p>{item.description}</p>
+                                <button
+                                  type='button'
+                                  name='reserva'
+                                  className='button'
+                                  onClick={mostraForm}
+                                  >
+                                  Reservar
+                                </button>
+                            </div>
+                          </div>
+
+                        )
+                      })}
+
+                      
+                      
+
                     </div>
-
-                      
-                      
-
                 </div>
-            </div>
 
 
             </div>
