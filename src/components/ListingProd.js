@@ -1,6 +1,9 @@
+import { useContext } from 'react'
+import { ProductsContext } from '../contexts/ProductsContext'
 import '../styles/listingProdStyle.css'
 
 export default function ListingProd(){
+    const { mostraForm } = useContext(ProductsContext);
 
     return(
         <div className="homeContainer">
@@ -23,6 +26,7 @@ export default function ListingProd(){
                               type='button'
                               name='reserva'
                               className='button'
+                              onClick={mostraForm}
                               >
                               Reservar
                             </button>
