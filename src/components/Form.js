@@ -1,6 +1,14 @@
+import { useContext } from 'react'
+import { ProductsContext } from '../contexts/ProductsContext'
 import '../styles/formStyle.css'
 
 export default function Form(){
+    const { listReserv } = useContext(ProductsContext);
+    const reserv = [];
+
+    for( const item in listReserv){
+        reserv.push(listReserv[item])
+    }
 
     return(
         <div className="formWrapper">
@@ -17,16 +25,17 @@ export default function Form(){
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Stuart</td>
-                                <td>1</td>
-                                <td>X</td>
-                            </tr>
-                            <tr>
-                                <td>Stuart</td>
-                                <td>1</td>
-                                <td>X</td>
-                            </tr>
+                            { reserv?.map( item => {
+                                return(
+                                    <tr key={item.id}>
+                                        <td>{item.name}</td>
+                                        <td>{item.qtd}</td>
+                                        <td>X</td>
+                                    </tr>
+
+                                )
+                            }) }
+                            
                         </tbody>
                     </table>
                 </div>

@@ -3,7 +3,12 @@ import { ProductsContext } from '../contexts/ProductsContext'
 import '../styles/listingProdStyle.css'
 
 export default function ListingProd(){
-    const { mostraForm, listProducts } = useContext(ProductsContext);
+    const { addItemReserv, mostraForm, listProducts } = useContext(ProductsContext);
+
+    function handleOnClickReserv(item){
+      addItemReserv(item);
+      mostraForm();
+    }
 
     return(
         <div className="homeContainer">
@@ -16,7 +21,7 @@ export default function ListingProd(){
                   <h1>Escolha seu minion</h1>
 
                     <div className="gridItens">
-                      {listProducts?.length == 0 && (<div>Carregando...</div>)}
+                      {listProducts?.length === 0 && (<div>Carregando...</div>)}
                       {listProducts?.map( item => {
                         return(
                           <div className="card" key={item.itemID}>
@@ -28,7 +33,7 @@ export default function ListingProd(){
                                   type='button'
                                   name='reserva'
                                   className='button'
-                                  onClick={mostraForm}
+                                  onClick={() => handleOnClickReserv(item)}
                                   >
                                   Reservar
                                 </button>
