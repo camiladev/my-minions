@@ -103,17 +103,21 @@ export function ProductsProvider({ children }){
     async function sendMailReserv(event){
         event.preventDefault();
         const email = dadosForm.email.toLowerCase();
-        console.log('enviando email para: ', email)
+        const cliente = JSON.stringify(dadosForm.nome)
+        const res = JSON.stringify(reservs)
+        const texto = `O cliente ${cliente} solicitou reservar os seguintes bonecos:
+        ${res}`
 
         try {
-            // const conteudo = {
-            //     text: 'Teste de envio de email...',
-            //     emailTo: email,
-            //     emailCC: 'camila.mila148@gmail.com',   
-            // }
+            const conteudo = {
+                text: texto,
+                emailTo: email,
+                emailCC: 'camila.mila148@gmail.com',
+                // 'thiago@bgcbrasil.com.br',   
+            }
             
-            // const result = await API.post("produtosDB", "/sendMail", { body: conteudo })
-            // console.log('sendMail: ', result)
+            const result = await API.post("produtosDB", "/sendMail", { body: conteudo })
+            console.log('sendMail: ', result)
 
             setListReserv([]);
             setReservs([]);
