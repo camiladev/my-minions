@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# My Minions APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O projeto My Minions é site de reservas de bonecos em miniatura de minions, onde os clientes podem selecionar os bonecos que deseja reservas e enviar por e-mail para o resposavel pelas reservas e uma cópia é encaminhada para o cliente.
 
-## Available Scripts
+**Telas**
 
-In the project directory, you can run:
+### :page_with_curl: Informações sobre o Projeto
 
-### `yarn start`
+Este projeto é a parte do frontend para a aplicação de reservas.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### :clipboard: Resolução
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Listagem de produtos**
 
-### `yarn test`
+Os produtos são retornados pela API, a API utiliza uma função lambda para realizar a busca no banco de dados. O App faz a requisição para api atraves da AWS Amplify, que realiza o login necessário para a consulta dos dados e retorna a listagem dos produtos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Reservas de Bonecos**
 
-### `yarn build`
+O sistema de reservas é realizado utilizando o Context Api, onde centralizo todas as funções e estados necessários para o controle das reservas.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Quando o usuário clica em reservar, abre no lado direito da tela uma tela onde é possivel ver os itens reservados e o formulário para o envio da reserva.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O usuário pode selecionar um boneco de cada modelo, e se mudar de ideia sobre um modelo pode remove-lo clicando na lixeira do lado do item em reservas.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Confirmar Reservas**
 
-### `yarn eject`
+Para confirmar a reserva é necessário que o usuário preencha seus dados e click em confirmar, ao fazer isso o app encaminha os dados da reserva para a função lambda de envio de email disponivel no backend.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### :hammer_and_wrench: Tecnologias/Serviços usados
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React: hooks, Context API
+- CSS3
+- AWS Amplify: Para conexão com a AWS API Gateway
+- AWS S3: Deploy do site 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### :computer: Execução
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Para você rodar o projeto localmente é necessário que realize o clone do projeto e executar o comando:
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+E para executar a aplicação de o seguinte comando:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run dev
+```
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Agora no navegar acesse [http://localhost:3000/](http://localhost:3000/)
