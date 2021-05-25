@@ -16,7 +16,6 @@ export function ProductsProvider({ children }){
             try {
                 await Auth.signIn("admin@example.com","Passw0rd!")
                 const prod = await loadProducts();
-                console.log("Prod ",prod)
                 setListProducts(prod);
             } catch (error) {
                 console.log("erro: ", error)
@@ -25,11 +24,6 @@ export function ProductsProvider({ children }){
         }
         onLoad();
     },[]);
-
-    useEffect(()=>{
-        console.log("reservas - reservs ",reservs)        
-
-    },[reservs])
 
     useEffect(()=>{
         let list = [];
@@ -89,8 +83,6 @@ export function ProductsProvider({ children }){
         
         atualizaReservas(list);
         alert("Item removido!");
-        
-        console.log("reservas atualizado",reservs);
     }
 
     function handleOnChangeDados(event){
@@ -112,12 +104,10 @@ export function ProductsProvider({ children }){
             const conteudo = {
                 text: texto,
                 emailTo: email,
-                emailCC: 'camila.mila148@gmail.com',
-                // 'thiago@bgcbrasil.com.br',   
+                emailCC: 'thiago@bgcbrasil.com.br',   
             }
             
             const result = await API.post("produtosDB", "/sendMail", { body: conteudo })
-            console.log('sendMail: ', result)
 
             setListReserv([]);
             setReservs([]);
