@@ -10,13 +10,13 @@
 
 .formContainer{
     width: 395px;
-    height: 800px;
+    /* height: 800px; */
     padding: 20px;
 
     position: fixed;
       
     
-    background: #F2B95085;
+    background: #F2B950;
     color: #4A738C;
 
     display: flex;
@@ -25,9 +25,53 @@
     justify-content: space-between;
 }
 
+.window{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.window span{
+    width: 50px;
+    display: inherit;
+    
+}
+
+.window span div{
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+.window span div:first-child{
+    margin-right: 10px;
+}
+
 .table{
     width: 100%;
-    
+
+    display: flex;    
+    flex-direction: column;
+}
+
+.table thead > tr,
+.table tbody > tr{
+    line-height: 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 100px 30px;
+}
+
+.table thead > tr{
+    text-align: justify;
+}
+
+.table tbody > tr td:not(:first-child){
+    text-align: center;
+}
+
+.remove{
+    cursor: pointer;
 }
 
 .form{
