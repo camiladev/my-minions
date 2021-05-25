@@ -4,6 +4,18 @@ O projeto My Minions é site de reservas de bonecos em miniatura de minions, ond
 
 **Telas**
 
+<table>
+  <tr>
+    <td>
+    <img src="https://user-images.githubusercontent.com/63053569/119558343-a9a73e80-bd77-11eb-9be5-12235d25d180.png" width="500">
+    </td>
+    <td>
+    <img src="https://user-images.githubusercontent.com/63053569/119558352-ac099880-bd77-11eb-8d52-ccdfc383818c.png" width="500">
+    </td>
+  </tr>
+    
+</table>
+
 ### :page_with_curl: Informações sobre o Projeto
 
 Este projeto é a parte do frontend para a aplicação de reservas.
