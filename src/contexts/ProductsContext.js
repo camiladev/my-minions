@@ -103,8 +103,7 @@ export function ProductsProvider({ children }){
         try {
             const conteudo = {
                 text: texto,
-                emailTo: email,
-                emailCC: 'thiago@bgcbrasil.com.br',   
+                emailTo: email,   
             }
             
             const result = await API.post("produtosDB", "/sendMail", { body: conteudo })
