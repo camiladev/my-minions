@@ -56,7 +56,7 @@ npm install
 E para executar a aplicação de o seguinte comando:
 
 ```bash
-npm run dev
+npm start
 ```
 
 Agora no navegar acesse [http://localhost:3000/](http://localhost:3000/)
