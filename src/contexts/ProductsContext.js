@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
-import { API, Auth } from 'aws-amplify';
+import { API } from 'aws-amplify';
+import { getProducts, sendMail } from '../services/repositores/products';
 
 export const ProductsContext = createContext({});
 
@@ -14,8 +15,7 @@ export function ProductsProvider({ children }){
     useEffect(()=>{
         async function onLoad(){
             try {
-                await Auth.signIn("admin@example.com","Passw0rd!")
-                const prod = await loadProducts();
+                const prod = await getProducts();
                 setListProducts(prod);
             } catch (error) {
                 console.log("erro: ", error)
@@ -42,7 +42,7 @@ export function ProductsProvider({ children }){
     }
 
     function loadProducts(){
-        return API.get("produtosDB", "/produtosDB");
+        return getProducts();
     }
 
     function mostraForm(){
@@ -106,7 +106,8 @@ export function ProductsProvider({ children }){
                 emailTo: email,   
             }
             
-            const result = await API.post("produtosDB", "/sendMail", { body: conteudo })
+            const result = await sendMail(conteudo)
+            //API.post("produtosDB", "/sendMail", { body: conteudo })
 
             setListReserv([]);
             setReservs([]);
