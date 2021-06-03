@@ -10,16 +10,3 @@ export async function getProducts(){
         console.log('Api Gateway erro: ', error)
     }
 }
-
-export async function sendMail(data){
-    try {
-        const response = await api.post('/dev/sendMail', {
-            body: data
-        })
-
-        console.log('response envio de email> ', response)
-        return response
-    } catch (error) {
-        console.log('Erro ao enviar e-mail: ', error)
-    }
-}

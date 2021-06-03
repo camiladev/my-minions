@@ -1,8 +1,4 @@
 const config = {
-    s3: {
-      REGION: "us-east-1",
-      BUCKET: "img-produtos",
-    },
     apiGateway: {
       REGION: "us-east-1",
       URL: "https://8j9blp9bp9.execute-api.us-east-1.amazonaws.com/dev",

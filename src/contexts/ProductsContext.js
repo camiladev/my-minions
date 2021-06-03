@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
-import { API } from 'aws-amplify';
-import { getProducts, sendMail } from '../services/repositores/products';
+import { getProducts } from '../services/repositores/products';
+import { SendMail } from '../services/repositores/sendMail';
 
 export const ProductsContext = createContext({});
 
@@ -101,12 +101,12 @@ export function ProductsProvider({ children }){
         ${res}`
 
         try {
-            const conteudo = {
+            const data = {
                 text: texto,
                 emailTo: email,   
             }
             
-            const result = await sendMail(conteudo)
+            const result = await SendMail(data)
             //API.post("produtosDB", "/sendMail", { body: conteudo })
 
             setListReserv([]);
