@@ -15,7 +15,7 @@ export default function Form(){
     let heightForm = "";
 
     if(isMiniForm){
-        heightForm = "800"
+        heightForm = "600"
     }else{
         heightForm = "65"
     }

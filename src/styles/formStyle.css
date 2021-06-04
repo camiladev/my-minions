@@ -57,6 +57,8 @@
 
     display: grid;
     grid-template-columns: 1fr 100px 30px;
+
+    border-bottom: 1px solid #4A738C25;
 }
 
 .table thead > tr{
@@ -73,7 +75,6 @@
 
 .form{
     width: 100%;
-    height: 200px;
     padding: 0 20px;
 
     border-top: 1px solid #4A738C25;
@@ -81,21 +82,21 @@
 
 .form form{
     width: 100%;
-    height: 100%;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
 
 .form form span{
     width: 100%;
     height: 100%;
+    margin-bottom: 10px;
     
     display: flex;
     flex-direction: column;
     
 }
+
 .form form span input{
     height: 30px;
     margin-top: 5px;
@@ -103,15 +104,34 @@
 
 .form form button{
     width: 100px;
-    height: 40px;
+    height: 32px;
     margin-top: 10px;
     margin-left: auto;
+    margin-bottom: 20px;
+
     background: #4A738C;
     border: 1px solid #4A738C;
     border-radius: 5px;
     color: #F2F2F2;
     font-weight: 500;
     line-height: 30px;
+}
+
+/* Responsividade */
+
+@media(max-width: 450px){
+    .formContainer{
+        width: 295px;
+        padding-bottom: 50px;
+    }
+
+    .form{
+        padding: 0;
+    }
+
+    .form form{
+        height: 85%;
+    }
 }
 
 
