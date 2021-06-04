@@ -1,5 +1,4 @@
 .formWrapper{
-    width: 650px;
     height: 100%;  
     
     background: #F2F2F2;
@@ -10,11 +9,9 @@
 
 .formContainer{
     width: 395px;
-    /* height: 800px; */
     padding: 20px;
 
-    position: fixed;
-      
+    position: fixed;      
     
     background: #F2B950;
     color: #4A738C;
