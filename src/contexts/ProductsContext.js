@@ -36,11 +36,6 @@ export function ProductsProvider({ children }){
 
     },[listReserv])
 
-    function atualizaReservas(newList){
-        setReservs(newList);
-        setIsMiniForm(!isMiniForm);
-    }
-
     function loadProducts(){
         return getProducts();
     }
@@ -76,12 +71,20 @@ export function ProductsProvider({ children }){
     }
 
     function removeItemReserv(item){
-        let list = reservs
-    
-        const index = list.indexOf(item)
-        const removed = list.splice(index,1)
+        let list = []
+        let objRes = listReserv    
         
-        atualizaReservas(list);
+        delete objRes[`${item.id}`]
+
+        for(let rev in listReserv){
+            if(rev === item.id){
+                continue;
+            }
+            list.push(listReserv[rev]);
+        }
+        setReservs(list);
+        setListReserv(objRes);        
+       
         alert("Item removido!");
     }
 
