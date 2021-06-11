@@ -36,10 +36,6 @@ export function ProductsProvider({ children }){
 
     },[listReserv])
 
-    function loadProducts(){
-        return getProducts();
-    }
-
     function mostraForm(){
         if(isShowForm){
             return;
@@ -109,7 +105,7 @@ export function ProductsProvider({ children }){
                 emailTo: email,   
             }
             
-            const result = await SendMail(data)
+            await SendMail(data)
             //API.post("produtosDB", "/sendMail", { body: conteudo })
 
             setListReserv([]);
